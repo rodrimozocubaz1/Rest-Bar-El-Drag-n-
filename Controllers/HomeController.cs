@@ -10,10 +10,23 @@ namespace Rest_Bar_El_Drag_n_.Controllers
 {
     public class HomeController : Controller
     {
+        private HomeController _context;
+        public HomeController(HomeController c) {
+            _context = c;
+        }
         public IActionResult Index()
         {
+            
+
             return View();
         }
+
+        public IActionResult Noticia(int id)
+        {
+            return View(_context.Noticias.Find(id));
+        }
+
+
 
         public IActionResult Privacy()
         {
