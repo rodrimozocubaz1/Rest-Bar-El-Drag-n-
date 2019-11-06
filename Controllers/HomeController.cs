@@ -10,20 +10,28 @@ namespace Rest_Bar_El_Drag_n_.Controllers
 {
     public class HomeController : Controller
     {
+        private RestauranteContext _context;
+        public HomeController(RestauranteContext c) {
+            _context = c;
+        }
         public IActionResult Index()
         {
+            
             return View();
         }
 
-        public IActionResult Privacy()
+        public IActionResult Nosotros()
         {
+            return View();
+
+        }
+        public IActionResult Menu()
+        {
+            ViewBag.Categorias = _context.Categorias.ToList();
+            ViewBag.Noticias = _context.Menus.ToList();
             return View();
         }
 
-        [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
-        public IActionResult Error()
-        {
-            return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
-        }
+        
     }
 }
