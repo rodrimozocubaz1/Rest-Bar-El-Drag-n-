@@ -6,7 +6,6 @@ using Rest_Bar_El_Drag_n_.Models;
 namespace Rest_Bar_El_Drag_n_.Controllers
 {
    
-        [Authorize(Roles="Administrador")]
     public class CategoriasController : Controller
     {
         private RestauranteContext _context;
