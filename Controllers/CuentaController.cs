@@ -104,7 +104,7 @@ namespace Rest_Bar_El_Drag_n_.Controllers
 
                 if (resultado.Succeeded) {
 
-                    return RedirectToAction("index", "home");
+                    return RedirectToAction("index", "Menu");
                 }
                 else {
                     
