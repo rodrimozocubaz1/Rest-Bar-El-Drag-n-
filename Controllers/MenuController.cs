@@ -1,35 +1,21 @@
 using System.Linq;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using Rest_Bar_El_Drag_n_.Models;
 
-namespace Rest_Bar_El_Drag_n_.Controllers
+namespace PortalNoticias.Controllers
 {
-    public class MenuController : Controller
+    public class NoticiasController : Controller
     {
-         private RestauranteContext _context;
-        public MenuController(RestauranteContext c) {
+        private RestauranteContext _context;
+        public NoticiasController(RestauranteContext c) {
             _context = c;
         }
         public IActionResult Index()
         {
-            ViewBag.Categorias = _context.Categorias.ToList();
-            return View ();
+            var lista = _context.Menus.ToList();
+            return View(lista);
         }
-        public IActionResult Menuxcateg(int codigo){
-            var menuc = _context.Menus
-                                   .Where(x => x.CategoriaId== codigo)
-                                   .ToList();
-
-            var viewModel = new IndexViewModel();
-            
-            viewModel.Menus = menuc;
-
-            return View(viewModel);
-
-
-
-        }
-
         public IActionResult Registro()
         {
             ViewBag.Categorias = _context.Categorias.ToList();
@@ -42,23 +28,10 @@ namespace Rest_Bar_El_Drag_n_.Controllers
             if (ModelState.IsValid) {
                 _context.Add(x);
                 _context.SaveChanges();
-                return RedirectToAction("Index","Menu");
+                return RedirectToAction("Index");
             }
             ViewBag.Categorias = _context.Categorias.ToList();
             return View(x);
-        }
-
-        public IActionResult Compra(int cod){
-            if (!User.Identity.IsAuthenticated) {
-                return RedirectToAction("login","Cuenta");
-            else{
-                var menu = _context.Menus.Find(cod);
-                var viewModel = new IndexViewModel();
-                ViewBag.Usuarios=_context.Usuarios.ToList();
-                viewModel.Menus = menu;
-                
-                return View(viewModel);
-            }
         }
     }
 }
