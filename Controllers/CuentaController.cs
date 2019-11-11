@@ -76,7 +76,8 @@ namespace Rest_Bar_El_Drag_n_.Controllers
                 var r = _um.AddToRoleAsync(usuario, "Usuario").Result;
 
 
-                if (resultado.Succeeded) {
+                
+            if (resultado.Succeeded) {
                     return RedirectToAction("index", "home");
                 }
                 else {
@@ -104,7 +105,7 @@ namespace Rest_Bar_El_Drag_n_.Controllers
 
                 if (resultado.Succeeded) {
 
-                    return RedirectToAction("index", "Menu");
+                    return RedirectToAction("index", "home");
                 }
                 else {
                     

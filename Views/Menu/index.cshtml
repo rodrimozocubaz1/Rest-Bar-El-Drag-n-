@@ -1,23 +1,17 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Menu</title>
-</head>
-<body>
-    <h1>Lista por categoria</h1>
-    @foreach (var item in (List<Categoria>)ViewBag.Categorias)
-        {
-            
-            <li class="nav-item">
-                <a class="nav-link text-dark" asp-action="menuxcateg"
-                asp-route-id="@item.Id">@item.Nombre</a>
-            </li>
-            
-        }
-    
-    
-</body>
-</html>
+@model List<Menu>
+
+<h1>Lista de Platillos</h1>
+
+@if (Model.Count == 0) {
+    <p>No hay menus registrados</p>
+}
+
+<ul class="list">
+@foreach (var item in Model)
+{
+    <li>@item.Nombre</li>
+    <li><img src="@item.Foto"></li>
+    <li>@item.Descripcion</li>
+    <li>@item.Precio</li>
+}
+</ul>
