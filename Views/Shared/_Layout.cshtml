@@ -34,19 +34,13 @@
                         <li class="nav-item">
                             <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Nosotros">Nosotros</a>
                         </li>
-                         <li class="nav-item">
-                            <a class="nav-link text-dark" href="~/Categorias/index">Categorías</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-controller="Categorias" asp-action="Registro">Registro de categoría</a>
-                        </li>
+                         
                         <li class="nav-item">
                             <a class="nav-link text-dark" asp-area="" asp-controller="Menu" asp-action="Index">Menu</a>
                         </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-controller="Menu" asp-action="Registro">Registro de Menu</a>
-                        </li>
+                        
                         @if (!User.Identity.IsAuthenticated) {
+                           
                             <li class="nav-item">
                                 <a class="nav-link text-dark" asp-controller="Cuenta" asp-action="Crear"> Crear cuenta</a>
                             </li>
@@ -55,6 +49,15 @@
                             </li>
                         }
                         else {
+                             <li class="nav-item">
+                            <a class="nav-link text-dark" href="~/Categorias/index">Categorías</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-dark" asp-controller="Categorias" asp-action="Registro">Registro de categoría</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-dark" asp-controller="Menu" asp-action="Registro">Registro de Menu</a>
+                        </li>
                             <li class="nav-item">
                                 <a class="nav-link text-dark" asp-controller="Cuenta" asp-action="CrearRol"> Crear Rol</a>
                             </li>
@@ -74,18 +77,12 @@
                     </ul>
                 </div>
             </div>
-        </nav>
+    
     </header>
-    <div class="container">
-        <partial name="_CookieConsentPartial" />
-        <main role="main" class="pb-3">
-            @RenderBody()
-        </main>
-    </div>
+    @RenderBody()
 
-    <footer class="border-top footer text-muted">
+    <footer class="footer">
         <div class="container">
-            &copy; 2019 - Rest_Bar_El_Drag_n_ - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
         </div>
     </footer>
 
