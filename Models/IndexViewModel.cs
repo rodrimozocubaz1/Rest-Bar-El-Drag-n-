@@ -6,6 +6,8 @@ namespace Rest_Bar_El_Drag_n_.Models
     {
         public List<Categoria> Categorias { get; set; }
         public List<Menu> Menus { get; set; }
+
+        public List<Reserva> Reservas { get; set;}
         
     }
 }

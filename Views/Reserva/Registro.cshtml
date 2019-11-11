@@ -1,0 +1,27 @@
+@model Reserva
+
+<h1>Registro del Reserva</h1>
+
+<form method="post">
+    <div asp-validation-summary="All"></div>
+
+    <div class="form-group">
+        <label asp-for="CantidadP"></label>
+        <input asp-for="CantidadP">
+    </div>
+    <div class="form-group">
+        <label asp-for="Fecha"></label>
+        <input asp-for="Fecha" class="form-control">
+    </div>
+    <div class="form-group">
+        <label asp-for="Hora"></label>
+        <input asp-for="Hora"  class="form-control">
+    </div>
+    <div class="form-group">
+        <label asp-for="DNI"></label>
+        <input asp-for="DNI" rows="10" class="form-control">
+    </div>
+    
+    
+    <button class="btn btn-primary">Registrar</button>
+</form>

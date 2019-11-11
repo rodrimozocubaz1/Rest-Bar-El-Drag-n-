@@ -1,0 +1,17 @@
+@model List<Reserva>
+
+<h1>Lista de Platillos</h1>
+
+@if (Model.Count == 0) {
+    <p>No hay menus registrados</p>
+}
+
+<ul class="list">
+@foreach (var item in Model)
+{
+    <li>@item.CantidadP</li>
+    <li>@item.Fecha</li>
+    <li>@item.Hora</li>
+    <li>@item.DNI</li>
+}
+</ul>
