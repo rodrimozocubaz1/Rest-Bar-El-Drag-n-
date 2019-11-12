@@ -14,7 +14,7 @@ namespace Rest_Bar_El_Drag_n_.Controllers
         }
         public IActionResult Index()
         {
-            var lista = _context.Categorias.ToList();
+            var lista = _context.Menus.ToList();
             return View(lista);
         }
         [Authorize(Roles="Administrador")]
