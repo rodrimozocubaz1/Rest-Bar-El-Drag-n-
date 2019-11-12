@@ -1,4 +1,5 @@
-﻿<!DOCTYPE html>
+﻿
+<!DOCTYPE html>
 <html>
 <head>
     <meta charset="utf-8" />
@@ -39,10 +40,21 @@
                         <a asp-controller="Cuenta" asp-action="Login"> Iniciar sesión</a>
                     </li>
                      }else{
-
+                   
                     <li class="li1">
                         <a asp-controller="Menu" asp-action="Registro"> Registrar Plato</a>
                     </li>
+                    
+                    /*
+                    @foreach (var item in List<Categoria>)
+                    {
+                        <li class="li1">
+                        <a asp-controller="Menu" asp-action="Menuxcateg" asp-route-id="@item.Id">@item.Nombre</a>
+                        </li>
+                        
+                    }
+                    
+                    */
                     <li class="li1">
                         <a asp-controller="Categorias" asp-action="Registro"> Registrar Categoria</a>
                     </li>
@@ -85,7 +97,8 @@
         </script>
     </environment>
     <script src="~/js/site.js" asp-append-version="true"></script>
-
+    /*<script src="~/lib/jquery-validation/dist/jquery.validate.min.js"></script>
+    <script src="~/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.min.js"></script>*/
     @RenderSection("Scripts", required: false)
 </body>
 </html>
