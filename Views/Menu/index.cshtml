@@ -1,17 +1,24 @@
 @model List<Menu>
+<div class="containerM">
+    <div class="containerP">
+        <h1>Nuestros Platos</h1>
+    </div>          
 
-<h1>Lista de Platillos</h1>
 
 @if (Model.Count == 0) {
     <p>No hay menus registrados</p>
 }
+<div class="cont">
+    
 
-<ul class="list">
 @foreach (var item in Model)
 {
-    <li>@item.Nombre</li>
-    <li><img src="@item.Foto"></li>
-    <li>@item.Descripcion</li>
-    <li>@item.Precio</li>
+<div class="menP">
+        <img  width="250px" height="175px" src="@item.Foto" alt="">
+        <h4>@item.Nombre</h4>
+        <div class="orange"></div>
+        <h5>s/. @item.Precio </h5>
+</div>
 }
-</ul>
+</div>
+</div>

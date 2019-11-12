@@ -168,3 +168,28 @@ font-family: Georgia, 'Times New Roman', Times, serif;
   padding-top: 50px;
   padding-right: 110px;
 }
+.menP{
+  height: 350px;
+  width: 250px;
+  margin-right: 200px;
+  margin-bottom:50px;
+  color: black;
+  font-family: 'Open Sans';
+  font-size: 18px;
+ text-align: center;
+  background-color: white;
+  -webkit-box-shadow: 4px 6px 5px -1px rgba(0,0,0,0.27);
+-moz-box-shadow: 4px 6px 5px -1px rgba(0,0,0,0.27);
+box-shadow: 4px 6px 5px -1px rgba(0,0,0,0.27);
+
+}
+.cont{
+  display: flex;
+  flex-wrap: wrap;
+}
+.orange{
+  border-top: 1px solid orange;
+  width: 200px;
+  height: 100px;
+  margin-left: 20px;
+}
