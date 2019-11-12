@@ -1,10 +1,12 @@
 using System.Linq;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Rest_Bar_El_Drag_n_.Models;
 
 namespace Rest_Bar_El_Drag_n_.Controllers
 {
+    
     public class CuentaController : Controller
     {
         private RestauranteContext _context;
@@ -22,7 +24,7 @@ namespace Rest_Bar_El_Drag_n_.Controllers
             _um = um;
             _rm = rm;
         }
-
+        [Authorize(Roles="Administrador")]
         public IActionResult AsociarRol()
         {
             ViewBag.Usuarios = _um.Users.ToList();
@@ -30,7 +32,7 @@ namespace Rest_Bar_El_Drag_n_.Controllers
 
             return View();
         }
-
+        [Authorize(Roles="Administrador")]
         [HttpPost]
         public IActionResult AsociarRol(string usuario, string rol) {
             var user = _um.FindByIdAsync(usuario).Result;
@@ -39,12 +41,12 @@ namespace Rest_Bar_El_Drag_n_.Controllers
 
             return RedirectToAction("index", "home");
         }
-
+        [Authorize(Roles="Administrador")]
         public IActionResult CrearRol()
         {
             return View();
         }
-
+        [Authorize(Roles="Administrador")]
         [HttpPost]
         public IActionResult CrearRol(string nombre)
         {
@@ -78,7 +80,7 @@ namespace Rest_Bar_El_Drag_n_.Controllers
 
                 
             if (resultado.Succeeded) {
-                    return RedirectToAction("index", "home");
+                    return RedirectToAction("login", "cuenta");
                 }
                 else {
                     foreach (var item in resultado.Errors)

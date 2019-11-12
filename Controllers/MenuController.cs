@@ -1,4 +1,5 @@
 using System.Linq;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Rest_Bar_El_Drag_n_.Models;
@@ -13,15 +14,16 @@ namespace Rest_Bar_El_Drag_n_.Controllers
         }
         public IActionResult Index()
         {
-            var lista = _context.Menus.ToList();
+            var lista = _context.Categorias.ToList();
             return View(lista);
         }
+        [Authorize(Roles="Administrador")]
         public IActionResult Registro()
         {
             ViewBag.Categorias = _context.Categorias.ToList();
             return View();
         }
-
+        [Authorize(Roles="Administrador")]
         [HttpPost]
         public IActionResult Registro(Menu x)
         {
@@ -33,5 +35,10 @@ namespace Rest_Bar_El_Drag_n_.Controllers
             ViewBag.Categorias = _context.Categorias.ToList();
             return View(x);
         }
+        public IActionResult Menuxcateg(int id){
+            var lista= _context.Menus.Where(x=>x.CategoriaId==id).ToList();
+            return View(lista);
+        }
+        
     }
 }
