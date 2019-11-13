@@ -1,8 +1,6 @@
-@model List<Menu>
+@model List<Categoria>
 <div class="containerM">
-    <div class="containerP">
-        <h1>Nuestros Platos</h1>
-    </div>          
+             
 
 
 @if (Model.Count == 0) {
@@ -13,12 +11,23 @@
 
 @foreach (var item in Model)
 {
-<div class="menP">
-        <img  width="250px" height="175px" src="@item.Foto" alt="">
-        <h4>@item.Nombre</h4>
-        <div class="orange"></div>
-        <h5>s/. @item.Precio </h5>
-</div>
+    <div class="containerP">
+        <h1>@item.Nombre</h1>
+    </div> 
+    @foreach(var menu in  item.Menus)
+    {
+        <div class="menP">
+            <img  width="250px" height="175px" src="@menu.Foto" alt="">
+            <h4>@menu.Nombre</h4>
+            <div class="orange"></div>
+            <h5>@menu.Descripcion</h5>
+            <h5>s/. @menu.Precio </h5>
+            <input type="hidden" value="@menu.Precio">
+            <button type="submit">Ordenar</button>
+            </div>
+
+        }
+
 }
 </div>
 </div>
