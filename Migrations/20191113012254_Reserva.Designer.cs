@@ -2,15 +2,17 @@
 using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Rest_Bar_El_Drag_n_.Models;
 
 namespace Rest_Bar_El_Drag_n_.Migrations
 {
     [DbContext(typeof(RestauranteContext))]
-    partial class RestauranteContextModelSnapshot : ModelSnapshot
+    [Migration("20191113012254_Reserva")]
+    partial class Reserva
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -219,13 +221,14 @@ namespace Rest_Bar_El_Drag_n_.Migrations
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd();
 
-                    b.Property<int>("CantidadPersonas");
+                    b.Property<int>("CantidadP");
 
                     b.Property<int>("DNI");
 
-                    b.Property<DateTime>("FechayHora");
+                    b.Property<DateTime>("Fecha");
 
-                    b.Property<int>("NumerodeMesa");
+                    b.Property<string>("Hora")
+                        .IsRequired();
 
                     b.HasKey("Id");
 

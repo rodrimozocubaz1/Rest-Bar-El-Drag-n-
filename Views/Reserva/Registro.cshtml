@@ -6,16 +6,32 @@
     <div asp-validation-summary="All"></div>
 
     <div class="form-group">
-        <label asp-for="CantidadP"></label>
-        <input asp-for="CantidadP">
+        <label asp-for="CantidadPersonas"></label>
+        <input asp-for="CantidadPersonas">
     </div>
     <div class="form-group">
-        <label asp-for="Fecha"></label>
-        <input asp-for="Fecha" class="form-control">
+        <label asp-for="FechayHora"></label>
+        <input asp-for="FechayHora" class="form-control">
     </div>
     <div class="form-group">
-        <label asp-for="Hora"></label>
-        <input asp-for="Hora"  class="form-control">
+        <label asp-for="NumerodeMesa"></label>
+        <select asp-for="NumerodeMesa" class="form-control">
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
+            <option value="6">6</option>
+            <option value="7">7</option>
+            <option value="8">8</option>
+            <option value="9">9</option>
+            <option value="10">10</option>
+            <option value="11">11</option>
+            <option value="12">12</option>
+            <option value="13">13</option>
+            <option value="14">14</option>
+            <option value="15">15</option>
+          </select>
     </div>
     <div class="form-group">
         <label asp-for="DNI"></label>

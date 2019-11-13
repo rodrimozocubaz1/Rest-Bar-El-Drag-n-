@@ -1,3 +1,4 @@
+using System;
 using System.Linq;
 using Microsoft.AspNetCore.Mvc;
 using Rest_Bar_El_Drag_n_.Models;
@@ -20,17 +21,35 @@ namespace Rest_Bar_El_Drag_n_.Controllers
             
             return View();
         }
+        public IActionResult Ocupado()
+        {
+            
+            return View();
+        }
 
         [HttpPost]
         public IActionResult Registro(Reserva x)
         {
+            var lista = _context.Reservas.ToList();
+            Boolean estado =false;
             if (ModelState.IsValid) {
-                _context.Add(x);
-                _context.SaveChanges();
-                return RedirectToAction("Index");
+                for (int i =0; i <lista.Count() ; i++)
+                {
+                    if(x.FechayHora == lista[i].FechayHora || x.NumerodeMesa == lista[i].NumerodeMesa){
+                        estado =true;
+                    }
+                }
+                if(!estado){
+                    _context.Add(x);
+                    _context.SaveChanges();
+                
+                }else{
+                    return RedirectToAction("Ocupado");
+                }
+                
             }
-            ViewBag.Categorias = _context.Categorias.ToList();
-            return View(x);
+            return RedirectToAction("Index");
+            
         }
     }
 }
