@@ -16,11 +16,15 @@
             <p>@item.Descripcion</p>
             <p>@item.Precio</p>
     
-            
+            /* @if(User.Identity.IsAuthenticated) {   */
+
+
             <div>
                 <a asp-action="Comprar" asp-route-codigo="@item.Id" class="btn btn-danger btn-lg">Comprar</a>
             </div>
+            /* } */
             <p></p>
+
         </div>
     }
         

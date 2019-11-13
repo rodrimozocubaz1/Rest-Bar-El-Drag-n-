@@ -10,6 +10,9 @@ namespace Rest_Bar_El_Drag_n_.Models
         public DbSet<Categoria> Categorias { get; set; }
 
         public DbSet<Reserva> Reservas { get; set; }
+
+        /*public DbSet<Compra> Compras { get; set; }*/
+
         public RestauranteContext(DbContextOptions<RestauranteContext> o) : base (o) {
         }
     }
