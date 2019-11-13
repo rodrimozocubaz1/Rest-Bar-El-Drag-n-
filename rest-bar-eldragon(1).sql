@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 13-11-2019 a las 19:20:19
+-- Tiempo de generación: 13-11-2019 a las 19:38:29
 -- Versión del servidor: 10.3.16-MariaDB
 -- Versión de PHP: 7.3.6
 
@@ -103,7 +103,9 @@ INSERT INTO `aspnetuserroles` (`UserId`, `RoleId`) VALUES
 ('5b4c4aa9-680b-4e85-b3a9-e9581fcfadfb', 'f482ec91-f741-40a2-81a5-71ce1618ddc0'),
 ('6151304f-f053-4408-8cce-d8462a44225c', '5aef1e4d-98b9-4065-abb6-83c5fea7f08f'),
 ('69f49faf-2754-43ef-8f3e-d6ec5e26233b', '5aef1e4d-98b9-4065-abb6-83c5fea7f08f'),
-('c649cbe6-f3e4-4809-bee5-87f95390244d', '5aef1e4d-98b9-4065-abb6-83c5fea7f08f');
+('ba97f02b-fa1f-4164-a81b-88898285a78d', 'f482ec91-f741-40a2-81a5-71ce1618ddc0'),
+('c649cbe6-f3e4-4809-bee5-87f95390244d', '5aef1e4d-98b9-4065-abb6-83c5fea7f08f'),
+('f3b78deb-3f9e-4a1a-b8ee-6295ae8bb5c1', 'f482ec91-f741-40a2-81a5-71ce1618ddc0');
 
 -- --------------------------------------------------------
 
@@ -142,9 +144,11 @@ INSERT INTO `aspnetusers` (`Id`, `UserName`, `NormalizedUserName`, `Email`, `Nor
 ('876a5711-8ee3-4af7-a4f6-4e4a3514198d', 'g1@gmail.com', 'G1@GMAIL.COM', 'g1@gmail.com', 'G1@GMAIL.COM', b'0', 'AQAAAAEAACcQAAAAEIJJp/He6aa5rGR5cg3HigS6c53ObOiJ+Vp3DGooFxy/ldG22Q73Q5lyFyTA/xryUQ==', 'DAVUA5B2X7ORA7PI6ZGZXNZAFVYMTPPV', 'd951c5c8-fc6c-48bf-b1cf-8c5c9ed90044', NULL, b'0', b'0', NULL, b'1', 0),
 ('93dd8c1e-59cd-44b6-bd81-00115c43fe5b', 'aa@gmail.com', 'AA@GMAIL.COM', 'aa@gmail.com', 'AA@GMAIL.COM', b'0', 'AQAAAAEAACcQAAAAEACKAH30FJYVGLrlZQuGNqOg6H7QMV6beBn6E696I2Yx2IrJPZpQS8rRZA3bgytucA==', 'CB5ZJ5E7RY7743GBSEHQHFXYB3WI47KZ', 'c07a0cb1-585f-4541-96b2-740baa90c865', NULL, b'0', b'0', NULL, b'1', 0),
 ('a24d7ba5-2703-4b1f-ab04-89961345048b', 'rod@gmail.com', 'ROD@GMAIL.COM', 'rod@gmail.com', 'ROD@GMAIL.COM', b'0', 'AQAAAAEAACcQAAAAEHCc5296ny8sQlGC5HUmJ3iFvAan1ZXR3tjjWp8WV5FpWRHcT6RbVa8nWV5nd4isbg==', 'MIWNTMXEHWNTRXFK3TIQRWUNWYSP26WP', '05f35bbf-ecda-4f8a-8afa-dbd184ffabfe', NULL, b'0', b'0', NULL, b'1', 0),
+('ba97f02b-fa1f-4164-a81b-88898285a78d', 'adrian@gmail.com', 'ADRIAN@GMAIL.COM', 'adrian@gmail.com', 'ADRIAN@GMAIL.COM', b'0', 'AQAAAAEAACcQAAAAEJXEOL9wnYwd3+PFkes5IsUBGXfM8ufY6x7v2tBOGYm6is9mkmx0NGSJlxMMIpN5YA==', '2LO73ZJXCWMZIBVRKXDJWBWOFT2AQW7F', 'c26994e3-05d5-4607-932f-64d20e23c6ba', NULL, b'0', b'0', NULL, b'1', 0),
 ('c05e3bce-5bfe-4309-9d40-7ad843592221', 'hola@gmail.com', 'HOLA@GMAIL.COM', 'hola@gmail.com', 'HOLA@GMAIL.COM', b'0', 'AQAAAAEAACcQAAAAEMIOqrdk9h3GCobGdNvnuQkc4XoJoYrJtp4iG1i2cy5JPTmeHm0hG5T6jZ22YLETOw==', '4ZAE333U3DK5RA2C4M552HOF3GKE5GE3', '4a25c1f2-2872-4574-9853-e9e0607dfe33', NULL, b'0', b'0', NULL, b'1', 0),
 ('c649cbe6-f3e4-4809-bee5-87f95390244d', 'ads6@gmail.com', 'ADS6@GMAIL.COM', 'ads6@gmail.com', 'ADS6@GMAIL.COM', b'0', 'AQAAAAEAACcQAAAAEEJqzhffRt26ULrnuCkUtGLQlyeiwnuevl726YfDHS2tcinXDOupogevNrIofKo9qQ==', 'APS3SU3LHUIUZMJMEGKIGOO4WHXZRCUG', '98353a84-5ba6-46db-9f16-b2a7eed8166b', NULL, b'0', b'0', NULL, b'1', 0),
-('cbee0aaf-7f88-4956-937b-499f1f3cf7fe', 'gg@gmail.com', 'GG@GMAIL.COM', 'gg@gmail.com', 'GG@GMAIL.COM', b'0', 'AQAAAAEAACcQAAAAEFUfCiiecJcqpcDcT6yl/bCfGWlPsQ8IvekktkgqJkSu6RPQS021bjCFJ3Tvi8Gqzw==', 'IJWR5JEDWGVYIT5AET3YV26STUDZAL2R', '075f815b-2aaf-4d04-9c9c-0661bcbb4d5d', NULL, b'0', b'0', NULL, b'1', 0);
+('cbee0aaf-7f88-4956-937b-499f1f3cf7fe', 'gg@gmail.com', 'GG@GMAIL.COM', 'gg@gmail.com', 'GG@GMAIL.COM', b'0', 'AQAAAAEAACcQAAAAEFUfCiiecJcqpcDcT6yl/bCfGWlPsQ8IvekktkgqJkSu6RPQS021bjCFJ3Tvi8Gqzw==', 'IJWR5JEDWGVYIT5AET3YV26STUDZAL2R', '075f815b-2aaf-4d04-9c9c-0661bcbb4d5d', NULL, b'0', b'0', NULL, b'1', 0),
+('f3b78deb-3f9e-4a1a-b8ee-6295ae8bb5c1', 'patrick@gmail.com', 'PATRICK@GMAIL.COM', 'patrick@gmail.com', 'PATRICK@GMAIL.COM', b'0', 'AQAAAAEAACcQAAAAECyVevSzpF/8jKlEMLD3dfBGnyU9XYGJ0n391K2l/Xj3KaysqpDqcBeAyulzx5TooA==', 'BPSA35IYGCN34OR2L7I7MF4CROD6HK53', '16a9a66a-fb3c-4cfd-830f-bfe058673b46', NULL, b'0', b'0', NULL, b'1', 0);
 
 -- --------------------------------------------------------
 
