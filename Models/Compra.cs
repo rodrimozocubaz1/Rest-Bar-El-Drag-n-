@@ -1,3 +1,6 @@
+using System;
+using System.ComponentModel.DataAnnotations;
+
 namespace Rest_Bar_El_Drag_n_.Models
 {
     public class Compra
@@ -10,7 +13,6 @@ namespace Rest_Bar_El_Drag_n_.Models
         
         public Menu Menu { get; set; }
 
-        public Usuario Usuario { get; set; }
 
         public int MenuId { get; set; }
 
