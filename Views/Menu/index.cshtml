@@ -10,14 +10,24 @@
 }
 <div class="cont">
     
+@foreach (var cat in (List<Categoria>)ViewBag.Categorias){
+        <li class="li1">
+            <a asp-controller="Menu" asp-action="Menuxcateg" asp-route-id="@cat.Id">@cat.Nombre</a>
+        </li>   
+
+}
 
 @foreach (var item in Model)
 {
+    
 <div class="menP">
         <img  width="250px" height="175px" src="@item.Foto" alt="">
         <h4>@item.Nombre</h4>
         <div class="orange"></div>
         <h5>s/. @item.Precio </h5>
+        <div>
+            <a asp-action="registro" asp-controller="Comprar" asp-route-id="@item.Id" class="btn btn-danger btn-lg">Comprar</a>
+        </div>
 </div>
 }
 </div>

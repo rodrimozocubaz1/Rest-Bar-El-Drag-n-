@@ -1,0 +1,38 @@
+@model Compra
+
+@foreach (var menu in (List<Menu>)ViewBag.Menus) {
+<h1>@menu.Nombre</h1>
+
+<form method="post">
+    <div asp-validation-summary="All"></div>
+    <input type="hidden" asp-for="MenuId" value="@menu.Id">
+    
+    <div class="form-group">
+        <label>Precio: @menu.Precio</label>
+        
+    </div>
+    <label asp-for="Cantidad"> </label>
+                        <select asp-for="Cantidad" class="input-48">
+                            <option value="1">1</option> 
+                            <option value="2" >2</option>
+                            <option value="3">3</option>
+                            <option value="4" >4</option>
+                            <option value="5">5</option>
+                        </select>
+    <div class="form-group">
+        <img src="@menu.Foto" alt="">
+    </div>
+    <div class="form-group">
+        <label asp-for="Direccion"></label>
+        <textarea asp-for="Direccion" placeholder="Escribe algo"></textarea>
+    </div>
+    <label asp-for="TipoPago"> </label>
+                        <select asp-for="TipoPago" class="input-48">
+                            <option value="Tarjeta">Tarjeta</option> 
+                            <option value="Efectivo" >Efectivo</option>
+                        </select>
+
+    <button asp-for="ComprarConf" class="btn btn-primary">Comprar</button>
+
+</form>
+}

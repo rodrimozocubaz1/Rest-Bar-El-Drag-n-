@@ -38,7 +38,7 @@ namespace Rest_Bar_El_Drag_n_
                 o => o.UseMySql("server=localhost;user=root;password=;database=rest-bar-eldragon;")
             );
 
-            services.AddIdentity<IdentityUser, IdentityRole>().AddEntityFrameworkStores<RestauranteContext>();
+            services.AddIdentity<Usuario, IdentityRole>().AddEntityFrameworkStores<RestauranteContext>();
 
             services.Configure<IdentityOptions>(options =>
             {

@@ -2,15 +2,17 @@
 using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Rest_Bar_El_Drag_n_.Models;
 
 namespace Rest_Bar_El_Drag_n_.Migrations
 {
     [DbContext(typeof(RestauranteContext))]
-    partial class RestauranteContextModelSnapshot : ModelSnapshot
+    [Migration("20191113194018_v1")]
+    partial class v1
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -199,20 +201,15 @@ namespace Rest_Bar_El_Drag_n_.Migrations
 
                     b.Property<int>("Cantidad");
 
-                    b.Property<string>("Direccion")
-                        .IsRequired();
+                    b.Property<string>("Direccion");
 
                     b.Property<DateTime>("Fecha");
 
                     b.Property<int>("MenuId");
 
-                    b.Property<string>("TipoPago")
-                        .IsRequired();
-
                     b.Property<float>("Total");
 
-                    b.Property<string>("UsuarioId")
-                        .IsRequired();
+                    b.Property<string>("UsuarioId");
 
                     b.HasKey("Id");
 
@@ -339,8 +336,7 @@ namespace Rest_Bar_El_Drag_n_.Migrations
 
                     b.HasOne("Rest_Bar_El_Drag_n_.Models.Usuario", "Usuario")
                         .WithMany()
-                        .HasForeignKey("UsuarioId")
-                        .OnDelete(DeleteBehavior.Cascade);
+                        .HasForeignKey("UsuarioId");
                 });
 
             modelBuilder.Entity("Rest_Bar_El_Drag_n_.Models.Menu", b =>

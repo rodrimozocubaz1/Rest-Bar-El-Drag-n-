@@ -15,6 +15,7 @@ namespace Rest_Bar_El_Drag_n_.Controllers
         public IActionResult Index()
         {
             var lista = _context.Menus.Take(15).ToList();
+            ViewBag.Categorias=_context.Categorias.ToList();
             return View(lista);
         }
         [Authorize(Roles="Administrador")]
@@ -25,13 +26,17 @@ namespace Rest_Bar_El_Drag_n_.Controllers
         }
         [Authorize(Roles="Administrador")]
         [HttpPost]
-        /*public Menu Menu {get;set;}   int id*/
+        
         public IActionResult Registro(Menu x)
         {
-            
+            /*
+            var Menu = _context.Menus.Where(x=> x.Id==Id).SingleOrDefault();*/
             if (ModelState.IsValid) {
+                _context.Add(x);
+                _context.SaveChanges();
+                return RedirectToAction("index");
                 /*var _Menu = _context.Menus.Where(x=>x.Id == Menu.Id).SingleOrDefault();
-                if(_Cliente == null)
+                if(_Menu == null)
                 {
                     _context.Menus.Add(Menu);
                 }
@@ -47,15 +52,47 @@ namespace Rest_Bar_El_Drag_n_.Controllers
                 _context.SaveChanges();
                 return RedirectToAction("ver_menus");*/
 
-                _context.Add(x);
-                _context.SaveChanges();
-                return RedirectToAction("Index");
+                
             }
             ViewBag.Categorias = _context.Categorias.ToList();
-            return View(x);
+            return View();
         }
-        /*public IActionResult ver_menus(){
+        [Authorize(Roles="Administrador")]
+        [HttpPost]
+        public IActionResult modificar1(Menu x)
+        {
+            /*
+            var Menu = _context.Menus.Where(x=> x.Id==Id).SingleOrDefault();*/
+            if (ModelState.IsValid) {
+                _context.Add(x);
+                _context.SaveChanges();
+                return Redirect("vermenus");
+                /*var _Menu = _context.Menus.Where(x=>x.Id == Menu.Id).SingleOrDefault();
+                if(_Menu == null)
+                {
+                    _context.Menus.Add(Menu);
+                }
+                else
+                {
+                    _Menu.Nombre = Menu.Nombre;
+                    _Menu.Foto = Menu.Foto;
+                    _Menu.Descripcion = Menu.Descripcion;
+                    _Menu.Precio = Menu.Precio;
+                    _Menu.Puntos = Menu.Puntos;
+                    _Menu.CategoriaId = Menu.CategoriaId;
+                }
+                _context.SaveChanges();
+                return RedirectToAction("ver_menus");*/
+
+                
+            }
+            ViewBag.Categorias = _context.Categorias.ToList();
+            return View();
+        }
+        
+        public IActionResult vermenus(){
             ViewBag.Menus = _context.Menus.ToList();
+            
             return View();
         }
         
@@ -64,9 +101,9 @@ namespace Rest_Bar_El_Drag_n_.Controllers
             var Menu = _context.Menus.Find(id);
             if(Menu == null)
             {
-                return RedirecToAction("ver_menus");
+                return RedirectToAction("ver_menus");
             }            
-            return RedirecToAction("Registro");
+            return RedirectToAction("modificar1");
         }
 
         
@@ -82,7 +119,7 @@ namespace Rest_Bar_El_Drag_n_.Controllers
             return Redirect("ver_menus");
         }
 
-        */
+
 
 
         public IActionResult Menuxcateg(int id){

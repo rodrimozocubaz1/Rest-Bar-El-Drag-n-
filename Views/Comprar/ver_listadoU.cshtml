@@ -1,0 +1,31 @@
+@model List<Compra>
+<h1>Mis Compras</h1>
+<table class="table table-bordered">
+    <thead>
+        <tr>
+            <th>Menu</td>
+            <th>Foto</th>
+            <th>PrecioUnitario</th>
+            <th>Cantidad</th>
+            <th>Direccion</th>
+            <th>Categoria</th>
+            <th>Total a Pagar</th>
+            <th>Fecha</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@item.Menu.Nombre</td>
+                <td><img src="@item.Menu.Foto" alt=""></td>
+                <td>S/@item.Menu.Precio</td>
+                <td>@item.Cantidad</td>
+                <td>@item.Direccion</td>
+                <td>@item.Menu.Categoria.Nombre</td>
+                <td>S/@item.Total</td>
+                <td>@item.Fecha</td>
+            </tr>
+        }
+    </tbody>
+</table>

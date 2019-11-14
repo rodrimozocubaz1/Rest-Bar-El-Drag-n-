@@ -30,7 +30,7 @@
                         <a asp-controller="Home" asp-action="Nosotros">Nosotros</a>
                     </li>
                     <li class="li1">
-                            <a asp-controller="Menu" asp-action="Index">Menu</a>
+                            <a asp-controller="Menu" asp-action="index">Menu</a>
                     </li>
                      @if (!User.Identity.IsAuthenticated) {
                     <li class="li1">
@@ -44,17 +44,16 @@
                     <li class="li1">
                         <a asp-controller="Menu" asp-action="Registro"> Registrar Plato</a>
                     </li>
+                    <li class="li1">
+                        <a asp-controller="Comprar" asp-action="ver_listadoA">Ver todas las compras</a>
+                    </li>
+                    <li class="li1">
+                        <a asp-controller="Comprar" asp-action="ver_listadoU">Mis compras</a>
+                    </li>
+                    <li class="li1">
+                        <a asp-controller="Menu" asp-action="ver_menus">Platos registrados</a>
+                    </li>
                     
-                    /*
-                    @foreach (var item in List<Categoria>)
-                    {
-                        <li class="li1">
-                        <a asp-controller="Menu" asp-action="Menuxcateg" asp-route-id="@item.Id">@item.Nombre</a>
-                        </li>
-                        
-                    }
-                    
-                    */
                     <li class="li1">
                         <a asp-controller="Categorias" asp-action="Registro"> Registrar Categoria</a>
                     </li>
@@ -68,7 +67,10 @@
                         <a  href="~/cuenta/crearrol">Crear Rol</a>
                     </li>
                     <li class="li1">
-                        <a  href="~/cuenta/asociarrol">Asociar Rol</a>
+                        <a  href="~/Menu/vermenus">Ver menus</a>
+                    </li>
+                    <li class="li1">
+                        <a  href="~/Cuenta/AsociarRol">Asociar Rol</a>
                     </li>
 
                      <li class="li1">
@@ -109,8 +111,7 @@
         </script>
     </environment>
     <script src="~/js/site.js" asp-append-version="true"></script>
-    /*<script src="~/lib/jquery-validation/dist/jquery.validate.min.js"></script>
-    <script src="~/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.min.js"></script>*/
+    
     @RenderSection("Scripts", required: false)
 </body>
 </html>

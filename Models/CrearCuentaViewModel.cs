@@ -20,5 +20,14 @@ namespace Rest_Bar_El_Drag_n_.Models
         [Display(Name="Confirmar Contraseña")]
         [Compare("Password1", ErrorMessage = "Las contraseñas no coinciden")]
         public string Password2 { get; set; }
+        [Required] 
+        public string  Nombre { get; set; }
+        [Required] 
+        public string Apellidos { get; set; }
+        [Required] 
+        public int Puntos { get; set;}
+        [Required] 
+        public string Telefono{ get; set;}
+        
     }
 }
