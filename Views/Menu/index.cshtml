@@ -1,8 +1,6 @@
-@model List<Menu>
+@model List<Categoria>
 <div class="containerM">
-    <div class="containerP">
-        <h1>Nuestros Platos</h1>
-    </div>          
+             
 
 
 @if (Model.Count == 0) {
@@ -19,6 +17,7 @@
 
 @foreach (var item in Model)
 {
+<<<<<<< HEAD
     
 <div class="menP">
         <img  width="250px" height="175px" src="@item.Foto" alt="">
@@ -29,6 +28,25 @@
             <a asp-action="registro" asp-controller="Comprar" asp-route-id="@item.Id" class="btn btn-danger btn-lg">Comprar</a>
         </div>
 </div>
+=======
+    <div class="containerP">
+        <h1>@item.Nombre</h1>
+    </div> 
+    @foreach(var menu in  item.Menus)
+    {
+        <div class="menP">
+            <img  width="250px" height="175px" src="@menu.Foto" alt="">
+            <h4>@menu.Nombre</h4>
+            <div class="orange"></div>
+            <h5>@menu.Descripcion</h5>
+            <h5>s/. @menu.Precio </h5>
+            <input type="hidden" value="@menu.Precio">
+            <button type="submit">Ordenar</button>
+            </div>
+
+        }
+
+>>>>>>> 81cc58372a54eab8ced499b9138ce09b2e63b1eb
 }
 </div>
 </div>

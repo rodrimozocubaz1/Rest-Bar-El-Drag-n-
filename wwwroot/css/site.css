@@ -172,7 +172,7 @@ font-family: Georgia, 'Times New Roman', Times, serif;
   height: 350px;
   width: 250px;
   margin-right: 200px;
-  margin-bottom:50px;
+  margin-bottom:20px;
   color: black;
   font-family: 'Open Sans';
   font-size: 18px;
@@ -190,6 +190,6 @@ box-shadow: 4px 6px 5px -1px rgba(0,0,0,0.27);
 .orange{
   border-top: 1px solid orange;
   width: 200px;
-  height: 100px;
+  height: 10px;
   margin-left: 20px;
 }

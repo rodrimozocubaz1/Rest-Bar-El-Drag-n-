@@ -23,6 +23,8 @@ namespace Rest_Bar_El_Drag_n_.Controllers
             _sim = s;
             _um = um;
             _rm = rm;
+
+           // _um.IsInRoleAsync
         }
         [Authorize(Roles="Administrador")]
         public IActionResult AsociarRol()

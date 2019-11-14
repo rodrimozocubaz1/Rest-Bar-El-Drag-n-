@@ -14,9 +14,15 @@ namespace Rest_Bar_El_Drag_n_.Controllers
         }
         public IActionResult Index()
         {
+<<<<<<< HEAD
             var lista = _context.Menus.Take(15).ToList();
             ViewBag.Categorias=_context.Categorias.ToList();
             return View(lista);
+=======
+            var categorias= _context.Categorias.Include(x => x.Menus).ToList();
+           // var lista = _context.Menus.Take(15).ToList();
+            return View(categorias);
+>>>>>>> 81cc58372a54eab8ced499b9138ce09b2e63b1eb
         }
         [Authorize(Roles="Administrador")]
         public IActionResult Registro()
